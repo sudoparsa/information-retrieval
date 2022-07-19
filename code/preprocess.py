@@ -1,7 +1,7 @@
 import spacy
 import nltk
 import string
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import word_tokenize
 from nltk.stem import SnowballStemmer, WordNetLemmatizer
 from spellchecker import SpellChecker
 
