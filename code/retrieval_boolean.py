@@ -6,7 +6,7 @@ class BooleanRetrieval():
     def __init__(self, 
                  inverted_indices_path='models/Boolean/inverted_indices.json',
                  df_info_path='models/Boolean/df_info.json'):
-        self.inverted_indices = json.load(open('models/Boolean/inverted_indices.json'))
+        self.inverted_indices = json.load(open(inverted_indices_path))
         self.df_info = json.load(open(df_info_path))
         self.preprocessor = Preprocess()
     
@@ -27,20 +27,15 @@ class BooleanRetrieval():
         start_time = time.time()
         result = self.bool_query(query, section, k)
         print(f'Query: {query}')
-        self.show(result, show_score=False)
+        self.show(result)
         print(f'Execution time: {time.time()-start_time}')
     
-    def show(self, indexes, show_score=True, scores=None):
+    def show(self, indexes):
         print('\n')
-        if show_score:
-            print('Similar Papers using Cosine Similarity:')
-        else:
-            print('Similar Papers:')
+        print('Similar Papers:')
         for ix, i in zip(indexes, range(len(indexes))):
             print(f'\n{i}.', end='')
             print(f' {self.df_info["title"][ix]}')
-            if show_score:
-               print(f'Cosine Similarity : {scores[ix]}')
         print()
 
 

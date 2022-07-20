@@ -13,17 +13,13 @@ class TransformerRetrieval():
         self.doc_embedding = json.load(open(embedding_path))
         self.preprocessor = Preprocess()
     
-    def show(self, indexes, show_score=True, scores=None):
+    def show(self, indexes, scores):
         print('\n')
-        if show_score:
-            print('Similar Papers using Cosine Similarity:')
-        else:
-            print('Similar Papers:')
+        print('Similar Papers using Cosine Similarity:')
         for ix, i in zip(indexes, range(len(indexes))):
             print(f'\n{i}.', end='')
             print(f' {self.doc_embedding["title"][ix]}')
-            if show_score:
-               print(f'Cosine Similarity : {scores[ix]}')
+            print(f'Cosine Similarity : {scores[ix]}')
         print()
 
     def most_similar(self, query, k):
