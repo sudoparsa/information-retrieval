@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# large files
+models/FastText/word_vectors.kv.vectors_ngrams.npy
