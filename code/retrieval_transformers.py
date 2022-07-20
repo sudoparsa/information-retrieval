@@ -1,8 +1,8 @@
 import json
 import time
 from preprocess import Preprocess
-from sentence_transformers import SentenceTransformer, util
 import numpy as np
+from sentence_transformers import SentenceTransformer, util
 
 
 class TransformerRetrieval():
