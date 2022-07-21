@@ -1,7 +1,5 @@
 import json
 import time
-
-from sklearn.cluster import k_means
 from preprocess import Preprocess
 import numpy as np
 from sentence_transformers import SentenceTransformer, util
@@ -61,4 +59,3 @@ class KmeansClustering:
 
 
 kmeans_clustering_model = KmeansClustering()
-kmeans_clustering_model.run('Materials')
