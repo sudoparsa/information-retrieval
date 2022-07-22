@@ -14,7 +14,6 @@ class TFIDF_Retrieval():
         self.preprocessor = Preprocess()
 
     def run_query(self, query, section, k):
-        
         if section == 'title':
             docs = self.title_tfidf
         else:
